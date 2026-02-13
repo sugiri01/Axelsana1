@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Sana Serif';
+  src: url('https://ext.same-assets.com/2498465380/3216237472.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sana Sans';
+  src: url('https://ext.same-assets.com/2498465380/3989193879.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --sana-black: #000000;
+  --sana-white: #ffffff;
+  --sana-gray-50: #fafafa;
+  --sana-gray-100: #f5f5f5;
+  --sana-gray-200: #e5e5e5;
+  --sana-gray-300: #d4d4d4;
+  --sana-gray-400: #a3a3a3;
+  --sana-gray-500: #737373;
+  --sana-gray-600: #525252;
+  --sana-gray-700: #404040;
+  --sana-gray-800: #262626;
+  --sana-gray-900: #171717;
+  --sana-yellow: #ffe600;
+  --sana-beige: #f5f0e8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Sana Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--sana-black);
+  background-color: var(--sana-white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Sana Serif', Georgia, serif;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.font-serif {
+  font-family: 'Sana Serif', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Sana Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sana-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sana-gray-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sana-gray-400);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.2s ease-out;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-5 py-2.5 bg-black text-white text-sm font-medium rounded-full transition-all duration-200 hover:bg-gray-800;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-5 py-2.5 bg-white text-black text-sm font-medium rounded-full border border-gray-200 transition-all duration-200 hover:bg-gray-50;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Dropdown styles */
+.dropdown-content {
+  @apply absolute top-full left-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 p-4 min-w-[200px] opacity-0 invisible transition-all duration-200;
+}
+
+.dropdown:hover .dropdown-content {
+  @apply opacity-100 visible;
+}
